@@ -21,7 +21,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const url = process.env.CMSURL
-  const query = `*[_type == 'events' && slug.current == '${params.event}']{ name,date,details,short,url, cords[]{name, email, contact}, image{asset->{url}}, meta{title, desc, image{asset->{url}}, keywords} }`
+  const query = `*[_type == 'events' && slug.current == '${params.event}']{ name,date,details,short,url, cords[]{name, email, contact}, image{asset->{url}}, guidelines{asset->{url}},meta{title, desc, image{asset->{url}}, keywords} }`
   const res = await fetch(url + encodeURIComponent(query))
   const data = await res.json()
 
@@ -38,39 +38,55 @@ const Event = ({ data }) => {
   Example data:
   
   {
-  cords: [
-    {
-      contact: '+9xxxxxxxxx4',
-      email: 'kevinxxxxxx@xxxxxxxx.in',
-      name: 'Kevin'
-    },
-    {
-      contact: '+91xxxxxxxxxxx9',
-      email: 'samsonxxxxxxxx@xxxxxxxxxx.in',
-      name: 'Samson'
-    }
-  ],
-  date: '2023-04-27',
-  details: "Bluetern is not just a football tournament; it's an experience that will leave participants exhilarated and inspired. The game requires quick reflexes, strategic thinking, and teamwork, making it a perfect test of skill for football enthusiasts. The intense 10-minute games will have you on the edge of your seat, as each team tries to outmaneuver the other and score as many goals as possible.",
-  image: {
-    asset: {
-      url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-900x1600.jpg'
-    }
-  },
-  meta: {
-    desc: "Bluetern is a 3x3 football tournament that promises an exciting and adrenaline-filled experience. Join us for a unique celebration of the ocean and sports, where quick reflexes, strategic thinking, and teamwork are put to the test. Don't miss out on this unmissable opportunity to be a part of the most thrilling event on the planet!",
-    image: { 
+  
+    cords: [
+      {
+        contact: '+9xxxxxxxxx4',
+        email: 'kevinxxxxxx@xxxxxxxx.in',
+        name: 'Kevin'
+      },
+
+      {
+        contact: '+91xxxxxxxxxxx9',
+        email: 'samsonxxxxxxxx@xxxxxxxxxx.in',
+        name: 'Samson'
+      }
+    ],
+
+    date: '2023-04-27',
+    
+    details: "Bluetern is not just a football tournament; it's an experience that will leave participants exhilarated and inspired. The game requires quick reflexes, strategic thinking, and teamwork, making it a perfect test of skill for football enthusiasts. The intense 10-minute games will have you on the edge of your seat, as each team tries to outmaneuver the other and score as many goals as possible.",
+    
+    guidelines: {
       asset: {
         url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-900x1600.jpg'
       }
-    
     },
-    keywords: 'football, rasam, festival',
-    title: 'Bluetern 3*3 Football'
-  },
-  name: 'BLUETERN 3*3 Football',
-  short: '3*3 Football',
-  url: 'https://google.com/'
+
+    image: {
+      asset: {
+        url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-900x1600.jpg'
+      }
+    },
+
+    meta: {
+     
+      desc: "Bluetern is a 3x3 football tournament that promises an exciting and adrenaline-filled experience. Join us for a unique celebration of the ocean and sports, where quick reflexes, strategic thinking, and teamwork are put to the test. Don't miss out on this unmissable opportunity to be a part of the most thrilling event on the planet!",
+     
+      image: { 
+        asset: {
+          url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-900x1600.jpg'
+        }
+      
+      },
+      keywords: 'football, rasam, festival',
+      
+      title: 'Bluetern 3*3 Football'
+    },
+    
+    name: 'BLUETERN 3*3 Football',
+    short: '3*3 Football',
+    url: 'https://google.com/'
 }
 
 
