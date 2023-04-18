@@ -3,7 +3,7 @@ import SEO from '../../components/SEO'
 
 export const getStaticProps = async () => {
   const url = process.env.CMSURL
-  const query = `*[_type == 'events']{name, short, date, image { asset -> {url}}}`
+  const query = `*[_type == 'events']{name, short, date, slug{current},image { asset -> {url}}}`
   const res = await fetch(url + encodeURIComponent(query))
   const data = await res.json()
 
@@ -19,6 +19,7 @@ const Events = ({ data }) => {
   // image url : data[i].image.asset.url
   // name: data[i].name
   // short desc: data[i].short
+  // Link to the separate event pages: href={'/'+data[i].slug.current}
   return (
     <>
       <SEO title='Events' description='The awesome events at RASAM'/>
