@@ -30,7 +30,7 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <Link href="#">
+          <Link href="/events">
             <i className="bi bi-calendar2-event-fill"></i>
           </Link>
         </li>

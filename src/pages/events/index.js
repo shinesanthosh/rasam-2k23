@@ -1,9 +1,12 @@
 import React from "react";
 import SEO from "../../components/SEO";
+import NavBar from "../../components/navbar";
 import styles from "../../styles/Events.module.scss";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Container from 'react-bootstrap/Container';
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export const getStaticProps = async () => {
   const url = process.env.CMSURL;
@@ -29,10 +32,29 @@ const Events = ({ data }) => {
       <SEO title="Events" description="The awesome events at RASAM" />
 
       <main className={styles.eventMain}>
+        <NavBar />
         <div className={styles.mainMask}>
           <h1>Events</h1>
-          <Container>
-            
+          <Container fluid className={styles.cardContainer}>
+            <Row>
+              {data.map((event) => {
+                return (
+                  <Col className={styles.cardColumn}>
+                    <Card style={{ width: "18rem" }} className={styles.Card}>
+                      <Card.Img
+                        variant="top"
+                        src={event.meta.image.asset.url}
+                      />
+                      <Card.Body>
+                        <Card.Title>{event.name.toUpperCase()}</Card.Title>
+                        <Card.Text>{event.short}</Card.Text>
+                        <Button variant="outline-warning">Know More</Button>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                );
+              })}
+            </Row>
           </Container>
         </div>
       </main>
