@@ -1,16 +1,20 @@
-import React from 'react'
-import SEO from '../../components/SEO'
+import React from "react";
+import SEO from "../../components/SEO";
+import styles from "../../styles/Events.module.scss";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Container from 'react-bootstrap/Container';
 
 export const getStaticProps = async () => {
-  const url = process.env.CMSURL
-  const query = `*[_type == 'events']{name, short, date, slug{current},image { asset -> {url}}}`
-  const res = await fetch(url + encodeURIComponent(query))
-  const data = await res.json()
+  const url = process.env.CMSURL;
+  const query = `*[_type == 'events']{name, short, date, slug{current},meta{image{asset->{url}}},image { asset -> {url}}}`;
+  const res = await fetch(url + encodeURIComponent(query));
+  const data = await res.json();
 
   return {
     props: { data: data.result },
-  }
-}
+  };
+};
 
 const Events = ({ data }) => {
   //  The data prop holds the array of events to be displayed
@@ -22,11 +26,18 @@ const Events = ({ data }) => {
   // Link to the separate event pages: href={'/'+data[i].slug.current}
   return (
     <>
-      <SEO title='Events' description='The awesome events at RASAM'/>
+      <SEO title="Events" description="The awesome events at RASAM" />
 
-      <div>The main events page that lists every event</div>
+      <main className={styles.eventMain}>
+        <div className={styles.mainMask}>
+          <h1>Events</h1>
+          <Container>
+            
+          </Container>
+        </div>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default Events
+export default Events;
