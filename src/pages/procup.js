@@ -25,6 +25,9 @@ const Procup = () => {
           <p>
             CEC <span>3</span> <span>VS </span>PRC-B <span>0</span>
           </p>
+          <p>
+            CEC <span>3</span> <span>VS </span>PRC-B <span>0</span>
+          </p>
         </div>
 
         <h2>UPCOMING</h2>
