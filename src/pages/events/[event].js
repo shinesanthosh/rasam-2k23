@@ -1,37 +1,40 @@
-import React from 'react'
-import SEO from '../../components/SEO'
+import React from "react";
+import SEO from "../../components/SEO";
+import styles from "../../styles/DetailedEvent.module.scss";
+import NavBar from "../../components/navbar";
+import Button from "react-bootstrap/Button";
 
 export const getStaticPaths = async () => {
-  const query = `*[_type == 'events']{slug{current}}`
-  const url = process.env.CMSURL
-  const res = await fetch(url + encodeURIComponent(query))
-  const data = await res.json()
+  const query = `*[_type == 'events']{slug{current}}`;
+  const url = process.env.CMSURL;
+  const res = await fetch(url + encodeURIComponent(query));
+  const data = await res.json();
 
-  let paths = []
+  let paths = [];
 
   data.result.map((param, key) => {
-    paths.push({ params: { event: param.slug.current } })
-  })
+    paths.push({ params: { event: param.slug.current } });
+  });
 
   return {
     paths,
     fallback: false,
-  }
-}
+  };
+};
 
 export const getStaticProps = async ({ params }) => {
-  const url = process.env.CMSURL
-  const query = `*[_type == 'events' && slug.current == '${params.event}']{ name,date,details,short,url, cords[]{name, email, contact}, image{asset->{url}}, guidelines{asset->{url}},meta{title, desc, image{asset->{url}}, keywords} }`
-  const res = await fetch(url + encodeURIComponent(query))
-  const data = await res.json()
+  const url = process.env.CMSURL;
+  const query = `*[_type == 'events' && slug.current == '${params.event}']{ name,date,details,short,url, cords[]{name, email, contact}, image{asset->{url}}, guidelines{asset->{url}},meta{title, desc, image{asset->{url}}, keywords} }`;
+  const res = await fetch(url + encodeURIComponent(query));
+  const data = await res.json();
 
   return {
     props: { data: data.result[0] },
-  }
-}
+  };
+};
 
 const Event = ({ data }) => {
-  console.log(data)
+  console.log(data);
 
   /*
   
@@ -100,9 +103,47 @@ const Event = ({ data }) => {
         description={data.meta.desc}
         imageURL={data.meta.image.asset.url}
       />
-      <div>The page template for each separate events</div>
+      <NavBar />
+      <main className={styles.eventMain}>
+        <div className={styles.eventMask}>
+          <div className={styles.eventCard}>
+            <div className={styles.containerLeft}>
+              <h1>{data.meta.title}</h1>
+              <div className={styles.pContainer}>
+                <p>{data.details}</p>
+              </div>
+              <h3>Co-ordinators</h3>
+              <div className={styles.cordContainer}>
+                {data.cords.map((cord, key) => {
+                  let elmt = key % 2 == 0 ? <hr /> : null;
+                  return (
+                    <div className={styles.cord} key={key}>
+                      <h5>{cord.name}</h5>
+                      <p>
+                        <a href={"mailto:" + cord.email}>{cord.email}</a>
+                      </p>
+                      <p>{cord.contact}</p>
+                      {elmt}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className={styles.buttonContainer}>
+                <Button variant="outline-warning" size="lg" className={styles.regButton}>
+                  Register
+                </Button>
+              </div>
+            </div>
+            <div className={styles.containerRight}>
+              <div className={styles.guidContainer}>
+                <img src={data.guidelines.asset.url} alt="EVENT GUIDELINES" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
     </>
-  )
-}
+  );
+};
 
-export default Event
+export default Event;
