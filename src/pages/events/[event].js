@@ -129,7 +129,11 @@ const Event = ({ data }) => {
                 })}
               </div>
               <div className={styles.buttonContainer}>
-                <Button variant="outline-warning" size="lg" className={styles.regButton}>
+                <Button
+                  variant="outline-warning"
+                  size="lg"
+                  className={styles.regButton}
+                >
                   Register
                 </Button>
               </div>

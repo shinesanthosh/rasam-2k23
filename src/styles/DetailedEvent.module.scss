@@ -142,3 +142,38 @@
     color: white;
   }
 }
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
+  .eventMask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .eventCard {
+      flex-direction: column;
+      margin-top: 800px;
+      height: fit-content;
+
+      .containerLeft {
+        // background-color: yellow;
+        width: 100%;
+
+        h1 {
+          font-size: 30px;
+          width: 100%;
+          text-align: center;
+        }
+      }
+
+      .containerRight {
+        width: 100%;
+        padding: 10px;
+      }
+    }
+  }
+
+  .cordContainer {
+    p {
+      word-wrap: break-word;
+    }
+  }
+}
