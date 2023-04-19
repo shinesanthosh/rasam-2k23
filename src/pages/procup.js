@@ -52,11 +52,69 @@ const Procup = () => {
                 <img src="/images/proc.png" alt="PROC LOGO" />
                 <img src="/images/gmmt.png" alt="GMMT LOGO" />
               </Col>
-              {/* <img src="/images/proc.png" alt="PROC LOGO" />
-              <img src="/images/gmmt.png" alt="GMMT LOGO" /> */}
             </Row>
             <Row className={styles.titleRow}>
               <h1>PROCUP & GMMT</h1>
+            </Row>
+            <Row className={styles.liveScoreRow}>
+              <Col className={styles.cardCol}>
+                <div className={styles.card}>
+                  <h4>GMMT Women&apos;s Basketball</h4>
+                  <div className={styles.teamInfo}>
+                    {/* TEAM NAME SHOULD GO HERE */}
+                    <h2>ABC</h2>
+                    <h1>VS</h1>
+                    <h2>DEF</h2>
+                  </div>
+                  <div className={styles.scoreBoard}>
+                    {/* SCORE SHOULD GO HERE */}
+                    <div className={styles.homeScore}>
+                      <h1>1</h1>
+                    </div>
+                    <div className={styles.awayScore}>
+                      <h1>5</h1>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+              <Col className={styles.cardCol}>
+                <div className={styles.card}>
+                  <h4>ProCup Men&apos;s Football</h4>
+                  <div className={styles.teamInfo}>
+                    <h2>ABC</h2>
+                    <h1>VS</h1>
+                    <h2>DEF</h2>
+                  </div>
+                  <div className={styles.scoreBoard}>
+                    {/* SCORE SHOULD GO HERE */}
+                    <div className={styles.homeScore}>
+                      <h1>1</h1>
+                    </div>
+                    <div className={styles.awayScore}>
+                      <h1>5</h1>
+                    </div>
+                  </div>
+                </div>
+              </Col>
+              <Col className={styles.cardCol}>
+                <div className={styles.card}>
+                  <h4>GMMT Men&apos;s Basketball</h4>
+                  <div className={styles.teamInfo}>
+                    <h2>ABC</h2>
+                    <h1>VS</h1>
+                    <h2>DEF</h2>
+                  </div>
+                  <div className={styles.scoreBoard}>
+                    {/* SCORE SHOULD GO HERE */}
+                    <div className={styles.homeScore}>
+                      <h1>1</h1>
+                    </div>
+                    <div className={styles.awayScore}>
+                      <h1>5</h1>
+                    </div>
+                  </div>
+                </div>
+              </Col>
             </Row>
           </Container>
           {/* <div className={styles.imgContainer}>

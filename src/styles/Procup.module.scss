@@ -24,6 +24,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  // background-color: yellow;
+  flex-direction: column;
 
   .imgRow {
     display: flex;
@@ -45,166 +47,146 @@
       }
     }
   }
+
+  .titleRow {
+    padding-block: 30px;
+    h1 {
+      color: #fff1b9;
+      font-size: 4.5rem;
+      font-weight: 700;
+      font-family: "playfair";
+      background-color: #355f5c04;
+      backdrop-filter: blur(5px);
+      padding-inline: 15px;
+      border-radius: 1rem;
+      position: relative;
+    }
+  }
+
+  .liveScoreRow {
+    // background-color: yellow;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5%;
+
+    .cardCol {
+      height: 400px;
+      width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-color: red;
+
+      .card {
+        height: 100%;
+        width: 80%;
+        background-color: #355f5c37;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .teamInfo {
+          width: 100%;
+          height: 20%;
+          // background-color: blue;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+
+          h2 {
+            font-family: "playfair";
+            color: #fff1b9;
+          }
+
+          h1 {
+            font-family: "playfair";
+            color: orange;
+          }
+        }
+
+        .scoreBoard {
+          width: 100%;
+          height: 70%;
+          // background-color: red;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .homeScore {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-right: solid 1px #fff1b9;
+          }
+          .awayScore {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+
+          .homeScore,
+          .awayScore {
+            h1 {
+              font-family: "playfair";
+              color: #fff1b9;
+              font-size: 5rem;
+            }
+          }
+        }
+
+        h4 {
+          font-family: "playfair";
+          color: #fff1b9;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.6rem;
+          background-color: #355f5c5e;
+          padding-inline: 15px;
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
 }
 
-// .procMain {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
+  .procContainer {
+    margin-top: 35%;
 
-//   height: 200dvh;
-//   width: 100dvw;
+    .titleRow {
+      padding-block: 30px;
+      h1 {
+        font-size: 40px;
+      }
+    }
 
-//   background: url("/images/bg-sports.jpg");
-//   background-size: cover;
-//   background-attachment: fixed;
+    .liveScoreRow {
+      // background-color: yellow;
+      height: 1000px;
+      flex-direction: column;
+      gap: 20px;
 
-//   &::-webkit-scrollbar {
-//     display: none;
-//   }
-// }
+      .cardCol {
+        // background-color: red;
+        height: 400px;
+        width: 400px;
 
-// .procMask {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   flex-direction: column;
-//   gap: 100px;
-
-//   height: 200dvh;
-//   width: 100dvw;
-
-//   background-color: rgba(0, 0, 0, 0.5);
-
-//   overflow-y: scroll;
-
-//   &::-webkit-scrollbar {
-//     display: none;
-//   }
-
-//   h1 {
-//     color: #fff1b9;
-//     font-size: 4.5rem;
-//     font-weight: 700;
-//     font-family: "playfair";
-//     background-color: #355f5c04;
-//     backdrop-filter: blur(5px);
-//     padding-inline: 15px;
-//     border-radius: 1rem;
-//     position: relative;
-//     // top: -200px;
-//   }
-
-//   h2 {
-//     color: #fff1b9;
-//     font-size: 3.5rem;
-//     font-weight: 700;
-//     font-family: "playfair";
-//     background-color: #355f5c04;
-//     backdrop-filter: blur(5px);
-//     padding-inline: 15px;
-//     border-radius: 1rem;
-//   }
-
-//   .imgContainer {
-//     height: 200px;
-//     width: 500px;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     img {
-//       height: 200px;
-//       width: 200px;
-//       border-radius: 100%;
-//       margin-top: 35%;
-//     }
-//   }
-
-//   .cardContainer {
-//     width: 100%;
-//     height: 350px;
-//     position: relative;
-
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
-
-//     .card {
-//       width: 25%;
-//       min-height: (100%);
-//       height: 100%;
-//       background-color: #355f5c37;
-//       //   backdrop-filter: blur(2px);
-//       border-radius: 1rem;
-//     }
-//   }
-
-//   .historyContainer {
-//     p {
-//       font-size: 2rem;
-//       font-family: "Anuphan";
-//       color: white;
-//       span {
-//         font-family: "aquatico";
-//         color: #fff1b9;
-//         background-color: #355f5c69;
-//         padding: 10px;
-//         &:nth-child(2) {
-//           color: rgb(255, 170, 0);
-//           font-size: 50px;
-//           font-family: "playfair";
-//           background-color: transparent;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
-//   .procMain {
-//     height: 250dvh;
-//   }
-
-//   .procMask {
-//     height: 250dvh;
-//     .imgContainer {
-//       margin-top: 50%;
-//       width: 100%;
-//       justify-content: space-evenly;
-//       img {
-//         height: 150px;
-//         width: 150px;
-//       }
-//     }
-
-//     h1 {
-//       font-size: 2.5rem;
-//     }
-
-//     h2 {
-//       font-size: 2.5rem;
-//     }
-
-//     .cardContainer {
-//       flex-direction: column;
-//       gap: 100px;
-//       height: 1500px;
-
-//       .card {
-//         width: 80%;
-//         height: 300px;
-//         background-color: #355f5c37;
-//         //   backdrop-filter: blur(2px);
-//         border-radius: 1rem;
-//       }
-//     }
-
-//     .historyContainer {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       flex-direction: column;
-//       height: 500px;
-//     }
-//   }
-// }
+        .card {
+          h4 {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
