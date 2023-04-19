@@ -81,13 +81,19 @@ const About = ({ data }) => {
           </Row>
           <Row className={styles.aboutRow}>
             <div className={styles.carouselContainer}>
+              <h1>Glimpses of RASAM</h1>
+
               <ImgCarousel cardata={pagedata.carousel} />
             </div>
           </Row>
           <Row className={styles.aboutRow}>
             <div className={styles.sponsorContainer}>
               <h1>SPONSORS</h1>
-              <p>Swimming your way soon!</p>
+              {/* <p>Swimming your way soon!</p> */}
+              <div className={styles.spimgContainer}>
+                <img src="/images/title.jpg" alt="TITLE SPONSOR" />
+                <p>Title Sponsor</p>
+              </div>
             </div>
           </Row>
         </Container>

@@ -32,9 +32,9 @@ const Home = () => {
       const source = video.querySelector("source");
 
       if (isMobile) {
-        source.src = "/videos/mob_background.mp4";
+        source.src = "http://providence.edu.in/files/rasam/mob_background.mp4";
       } else {
-        source.src = "/videos/raw_background.mp4";
+        source.src = "http://providence.edu.in/files/rasam/raw_background.mp4";
       }
 
       video.load();
@@ -59,7 +59,10 @@ const Home = () => {
         <NavBar />
         <div className={styles.videoContainer}>
           <video autoPlay muted loop ref={videoRef}>
-            <source src="/videos/raw_background.mp4" type="video/mp4" />
+            <source
+              src="http://providence.edu.in/files/rasam/raw_background.mp4"
+              type="video/mp4"
+            />
           </video>
           <img src="/images/logo.png" alt="rasam logo" />
           <div className={styles.clockContainer}>
