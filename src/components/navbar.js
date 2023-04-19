@@ -25,7 +25,7 @@ const NavBar = () => {
           </Link>
         </li>
         <li>
-          <Link href="about">
+          <Link href="/about">
             <i className="bi bi-info-circle-fill"></i>
           </Link>
         </li>
