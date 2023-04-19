@@ -37,9 +37,9 @@ const Events = ({ data }) => {
           <h1>Events</h1>
           <Container fluid className={styles.cardContainer}>
             <Row>
-              {data.map((event) => {
+              {data.map((event, key) => {
                 return (
-                  <Col className={styles.cardColumn}>
+                  <Col className={styles.cardColumn} key={key}>
                     <Card style={{ width: "18rem" }} className={styles.Card}>
                       <Card.Img
                         variant="top"
