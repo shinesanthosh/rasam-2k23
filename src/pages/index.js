@@ -32,9 +32,9 @@ const Home = () => {
       const source = video.querySelector("source");
 
       if (isMobile) {
-        source.src = "http://providence.edu.in/files/rasam/mob_background.mp4";
+        source.src = "https://providence.edu.in/files/rasam/mob_background.mp4";
       } else {
-        source.src = "http://providence.edu.in/files/rasam/raw_background.mp4";
+        source.src = "https://providence.edu.in/files/rasam/raw_background.mp4";
       }
 
       video.load();
@@ -60,7 +60,7 @@ const Home = () => {
         <div className={styles.videoContainer}>
           <video autoPlay muted loop ref={videoRef}>
             <source
-              src="http://providence.edu.in/files/rasam/raw_background.mp4"
+              src="https://providence.edu.in/files/rasam/raw_background.mp4"
               type="video/mp4"
             />
           </video>
