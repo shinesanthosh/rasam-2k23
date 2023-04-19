@@ -32,9 +32,9 @@ const Home = () => {
       const source = video.querySelector("source");
 
       if (isMobile) {
-        source.src = "https://providence.edu.in/files/rasam/mob_background.mp4";
+        source.src = "https://res.cloudinary.com/ddb1tjuew/video/upload/v1681925404/mob_background_xa6nme.mp4";
       } else {
-        source.src = "https://providence.edu.in/files/rasam/raw_background.mp4";
+        source.src = "https://res.cloudinary.com/ddb1tjuew/video/upload/v1681925124/raw_background_m3stgx.mp4";
       }
 
       video.load();
@@ -60,7 +60,7 @@ const Home = () => {
         <div className={styles.videoContainer}>
           <video autoPlay muted loop ref={videoRef}>
             <source
-              src="https://providence.edu.in/files/rasam/raw_background.mp4"
+              src="https://res.cloudinary.com/ddb1tjuew/video/upload/v1681925124/raw_background_m3stgx.mp4"
               type="video/mp4"
             />
           </video>
