@@ -78,13 +78,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap: 20px;
 
   border-radius: 1rem;
   overflow: hidden;
+
+  h1 {
+    font-family: "ananda";
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    font-size: 50px;
+  }
 }
 
 .sponsorContainer {
-  height: 200px;
+  height: 100%;
   width: 700px;
 
   margin-top: 50px;
@@ -98,18 +108,34 @@
   flex-direction: column;
   gap: 20px;
 
-  p {
-    color: white;
-    font-size: 25px;
-    font-family: "Anuphan";
-    font-weight: lighter;
+  .spimgContainer {
+    height: 100%;
+    width: 60%;
+    background-color: #011b1a3f;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 10px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    p {
+      color: white;
+      font-size: 25px;
+      font-family: "Anuphan";
+      font-weight: lighter;
+    }
   }
 
   h1 {
     font-family: "ananda";
     color: white;
     text-decoration: underline;
-    font-size: 2rem;
+    font-size: 50px;
   }
 }
 
