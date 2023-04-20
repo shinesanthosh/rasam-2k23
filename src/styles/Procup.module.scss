@@ -52,9 +52,9 @@
     padding-block: 30px;
     h1 {
       color: #fff1b9;
-      font-size: 4.5rem;
+      font-size: 2.5rem;
       font-weight: 700;
-      font-family: "playfair";
+      font-family: "aquatico";
       background-color: #355f5c04;
       backdrop-filter: blur(5px);
       padding-inline: 15px;
@@ -98,12 +98,12 @@
           align-items: center;
 
           h2 {
-            font-family: "playfair";
+            font-family: "aquatico";
             color: #fff1b9;
           }
 
           h1 {
-            font-family: "playfair";
+            font-family: "aquatico";
             color: orange;
           }
         }
@@ -144,12 +144,12 @@
         }
 
         h4 {
-          font-family: "playfair";
+          font-family: "aquatico";
           color: #fff1b9;
           display: flex;
           justify-content: center;
           align-items: center;
-          font-size: 1.6rem;
+          font-size: 1.2rem;
           background-color: #355f5c5e;
           padding-inline: 15px;
           border-radius: 1rem;
@@ -166,7 +166,8 @@
     .titleRow {
       padding-block: 30px;
       h1 {
-        font-size: 40px;
+        font-size: 25px;
+        text-align: center;
       }
     }
 

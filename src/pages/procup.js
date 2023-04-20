@@ -50,7 +50,8 @@ const Procup = () => {
               </Col>
             </Row>
             <Row className={styles.titleRow}>
-              <h1>PROCUP & GMMT</h1>
+              <h1>Providence Cup & George Mathew Memorial Trophy</h1>
+              {/* <h2>Final Scores</h2> */}
             </Row>
             <Row className={styles.liveScoreRow}>
               <Col className={styles.cardCol}>
