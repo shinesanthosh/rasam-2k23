@@ -10,6 +10,8 @@ const Procup = () => {
   const [events, setEvents] = useState([])
 
   useEffect(() => {
+    getEvents()
+
     const intervalId = setInterval(getEvents, 15000)
 
     return () => clearInterval(intervalId)
