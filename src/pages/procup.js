@@ -7,31 +7,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 const Procup = () => {
-  const [events, setEvents] = useState([])
-
-  useEffect(() => {
-    getEvents()
-
-    const intervalId = setInterval(getEvents, 15000)
-
-    return () => clearInterval(intervalId)
-  }, [])
-
-  const getEvents = () => {
-    fetch(process.env.NEXT_PUBLIC_GETLIVEEVENTS, {
-      headers: {
-        'content-type': 'application/json',
-        'x-hasura-admin-secret': process.env.NEXT_PUBLIC_HASURA_SECRET,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        let men = data.events[0]
-        setEvents(men)
-      })
-      .catch((e) => console.error(e))
-  }
-
+  
   return (
     <>
       <NavBar />
@@ -79,20 +55,20 @@ const Procup = () => {
                   <h4>ProCup Men&apos;s Football</h4>
                   <div className={styles.teamInfo}>
                     <h2>
-                      {events.events_teama ? events.events_teama.name : '---'}
+                      MDC
                     </h2>
                     <h1>VS</h1>
                     <h2>
-                      {events.events_teamb ? events.events_teamb.name : '---'}
+                      SBC AJCE
                     </h2>
                   </div>
                   <div className={styles.scoreBoard}>
                     {/* SCORE SHOULD GO HERE */}
                     <div className={styles.homeScore}>
-                      <h1>{events.teama_score}</h1>
+                      <h1>0</h1>
                     </div>
                     <div className={styles.awayScore}>
-                      <h1>{events.teamb_score}</h1>
+                      <h1>1</h1>
                     </div>
                   </div>
                 </div>
