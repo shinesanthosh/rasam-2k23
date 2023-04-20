@@ -59,7 +59,7 @@ const Procup = () => {
                     </h2>
                     <h1>VS</h1>
                     <h2>
-                      SBC AJCE
+                      SBC
                     </h2>
                   </div>
                   <div className={styles.scoreBoard}>
