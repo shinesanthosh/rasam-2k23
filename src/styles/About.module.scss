@@ -1,0 +1,257 @@
+.aboutMain {
+  height: 100dvh;
+  width: 100dvw;
+  background: url("/images/bg-about.png");
+  background-size: cover;
+  background-attachment: fixed;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.aboutMask {
+  height: 100dvh;
+  width: 100dvw;
+  background-color: rgba(5, 12, 24, 0.32);
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.aboutContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.aboutRow {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aboutContent {
+  margin-top: 10%;
+  background-color: #011b1a3f;
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  padding-block: 50px;
+
+  h1 {
+    font-family: "ananda";
+    font-size: 50px;
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    position: relative;
+
+    span {
+      font-family: "ananda";
+      font-size: 50px;
+      text-decoration: wavy;
+    }
+  }
+
+  p {
+    width: 70%;
+    color: white;
+    font-family: "Anuphan", sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: justify;
+  }
+}
+
+.carouselContainer {
+  height: 450px;
+  width: 700px;
+  margin-top: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+  border-radius: 1rem;
+  overflow: hidden;
+
+  h1 {
+    font-family: "ananda";
+    color: white;
+    text-decoration: underline;
+    text-underline-offset: 7px;
+    font-size: 50px;
+  }
+}
+
+.sponsorContainer {
+  height: 100%;
+  width: 700px;
+
+  margin-top: 50px;
+  margin-bottom: 10px;
+  background-color: #011b1a3f;
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+
+  .spimgContainer {
+    height: 100%;
+    width: 60%;
+    background-color: #011b1a3f;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 1rem;
+    text-align: center;
+    margin: 10px;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+    p {
+      color: white;
+      font-size: 25px;
+      font-family: "Anuphan";
+      font-weight: lighter;
+    }
+  }
+
+  h1 {
+    font-family: "ananda";
+    color: white;
+    text-decoration: underline;
+    font-size: 50px;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
+  .aboutMain {
+    background: url("/images/bg-about-mob.png");
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  .aboutRow {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aboutContent {
+    margin-top: 30%;
+    background-color: #011b1a3f;
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-block: 20px;
+
+    h1 {
+      font-family: "ananda";
+      color: white;
+      text-decoration: underline;
+      text-underline-offset: 10px;
+      position: relative;
+      font-family: 35px;
+
+      span {
+        font-family: "ananda";
+        font-size: 50px;
+        text-decoration: wavy;
+      }
+    }
+
+    p {
+      width: 70%;
+      color: white;
+      font-family: "Anuphan", sans-serif;
+      font-size: 20px;
+      font-weight: lighter;
+      text-align: justify;
+    }
+  }
+
+  .sponsorContainer {
+    height: 500px;
+    width: 95%;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background-color: #011b1a3f;
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .spimgContainer {
+      height: fit-content;
+      width: 100%;
+      background-color: #011b1a3f;
+      overflow: hidden;
+      border-radius: 1rem;
+      text-align: center;
+      margin: 10px;
+
+      img {
+        height: 60%;
+        width: 100%;
+        object-fit: cover;
+      }
+      p {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 25px;
+        font-family: "Anuphan";
+        font-weight: lighter;
+      }
+    }
+
+    p {
+      color: white;
+      font-size: 25px;
+      font-family: "Anuphan";
+      font-weight: lighter;
+    }
+
+    h1 {
+      font-size: 35px;
+    }
+  }
+
+  .carouselContainer {
+    height: 250px;
+    width: 400px;
+    margin-top: 50px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 1rem;
+
+    h1 {
+      font-size: 35px;
+    }
+  }
+}

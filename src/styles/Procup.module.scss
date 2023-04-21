@@ -1,0 +1,193 @@
+.procMain {
+  height: 100dvh;
+  width: 100dvw;
+
+  background: url("/images/bg-sports.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.procMask {
+  height: 100dvh;
+  width: 100dvw;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.procContainer {
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: yellow;
+  flex-direction: column;
+
+  .imgRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 150px;
+    overflow: hidden;
+
+    .procCol {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      img {
+        height: 150px;
+        width: 150px;
+        border-radius: 100%;
+      }
+    }
+  }
+
+  .titleRow {
+    padding-block: 30px;
+    h1 {
+      color: #fff1b9;
+      font-size: 2.5rem;
+      font-weight: 700;
+      font-family: "aquatico";
+      background-color: #355f5c04;
+      backdrop-filter: blur(5px);
+      padding-inline: 15px;
+      border-radius: 1rem;
+      position: relative;
+    }
+  }
+
+  .liveScoreRow {
+    // background-color: yellow;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 5%;
+
+    .cardCol {
+      height: 400px;
+      width: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // background-color: red;
+
+      .card {
+        height: 100%;
+        width: 80%;
+        background-color: #355f5c37;
+        border-radius: 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .teamInfo {
+          width: 100%;
+          height: 20%;
+          // background-color: blue;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+
+          h2 {
+            font-family: "aquatico";
+            color: #fff1b9;
+          }
+
+          h1 {
+            font-family: "aquatico";
+            color: orange;
+          }
+        }
+
+        .scoreBoard {
+          width: 100%;
+          height: 70%;
+          // background-color: red;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .homeScore {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            border-right: solid 1px #fff1b9;
+          }
+          .awayScore {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+          }
+
+          .homeScore,
+          .awayScore {
+            h1 {
+              font-family: "playfair";
+              color: #fff1b9;
+              font-size: 5rem;
+            }
+          }
+        }
+
+        h4 {
+          font-family: "aquatico";
+          color: #fff1b9;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 1.2rem;
+          background-color: #355f5c5e;
+          padding-inline: 15px;
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 1) {
+  .procContainer {
+    margin-top: 35%;
+
+    .titleRow {
+      padding-block: 30px;
+      h1 {
+        font-size: 25px;
+        text-align: center;
+      }
+    }
+
+    .liveScoreRow {
+      // background-color: yellow;
+      height: 1000px;
+      flex-direction: column;
+      gap: 20px;
+
+      .cardCol {
+        // background-color: red;
+        height: 400px;
+        width: 400px;
+
+        .card {
+          h4 {
+            font-size: 1.3rem;
+          }
+        }
+      }
+    }
+  }
+}
