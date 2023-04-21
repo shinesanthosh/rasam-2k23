@@ -27,7 +27,7 @@ const SEO = ({
       <meta property='og:type' content='website' />
       <meta
         property='og:image'
-        content={imageURL ? imageURL : '/images/logo.png'}
+        content={imageURL ? imageURL : '/images/logo_meta_scaled.png'}
       />
       <meta property='og:description' content={description} />
       <meta property='og:url' content='/' />
