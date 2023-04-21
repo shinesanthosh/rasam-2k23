@@ -54,7 +54,7 @@ const Home = () => {
 
   return (
     <>
-      <SEO title="Home" description="RASAM season 4 is here. Yaaay!!!" />
+      <SEO title="Home" description="Dive into the fourth season of RASAM, our highly anticipated college tech and cultural fest with an underwater twist. Immerse yourself in a spectacular blend of cutting-edge technology, artistic expression, and intellectual curiosity that will leave you spellbound. From electrifying performances by renowned artists to gripping competitions and workshops, RASAM Season 4 promises to offer an unparalleled opportunity for learning, exploration, and fun. Explore the depths of the unknown with us and discover a world of creativity, innovation, and diversity that will take your breath away. Come and experience the rush of adrenaline and the tranquility of the deep, all in one unforgettable event" />
       <main className={styles.mainContainer}>
         <NavBar />
         <div className={styles.videoContainer}>

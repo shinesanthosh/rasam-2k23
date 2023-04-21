@@ -10,6 +10,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 export const getStaticProps = async () => {
+  const url = process.env.CMSURL;
   let query = `*[_type == 'events' && type != 'tech']{name, short, date, slug{current},meta{image{asset->{url}}},image { asset -> {url}}}`
   let res = await fetch(url + encodeURIComponent(query))
   const data = await res.json()
