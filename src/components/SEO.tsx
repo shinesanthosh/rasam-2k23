@@ -34,7 +34,7 @@ const SEO = ({
       <meta property='' />
 
       {/* Twitter card tags */}
-      {/* <meta name='twitter:card' content='summary_large_image'></meta> */}
+      <meta name='twitter:card' content='summary_large_image'></meta>
 
 
     </Head>
