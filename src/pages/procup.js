@@ -5,22 +5,11 @@ import SEO from '../components/SEO'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Script from 'next/script'
 
 const Procup = () => {
+  
   return (
     <>
-      <Script
-        async
-        src='https://www.googletagmanager.com/gtag/js?id=G-9C3HWRW5DH'
-        strategy='afterInteractive'></Script>
-      <Script id='google-analytics' strategy='afterInteractive'>
-        {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9C3HWRW5DH');`}
-      </Script>
       <NavBar />
       <main className={styles.procMain}>
         <SEO
@@ -65,9 +54,13 @@ const Procup = () => {
                 <div className={styles.card}>
                   <h4>ProCup Men&apos;s Football</h4>
                   <div className={styles.teamInfo}>
-                    <h2>MDC</h2>
+                    <h2>
+                      MDC
+                    </h2>
                     <h1>VS</h1>
-                    <h2>SBC</h2>
+                    <h2>
+                      SBC
+                    </h2>
                   </div>
                   <div className={styles.scoreBoard}>
                     {/* SCORE SHOULD GO HERE */}
@@ -94,7 +87,7 @@ const Procup = () => {
                       <h1>71</h1>
                     </div>
                     <div className={styles.awayScore}>
-                      <h1>50 </h1>
+                      <h1>50  </h1>
                     </div>
                   </div>
                 </div>

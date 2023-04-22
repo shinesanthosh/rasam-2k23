@@ -8,10 +8,9 @@ import Card from 'react-bootstrap/Card'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Script from 'next/script'
 
 export const getStaticProps = async () => {
-  const url = process.env.CMSURL
+  const url = process.env.CMSURL;
   let query = `*[_type == 'events' && type != 'tech']{name, short, date, slug{current},meta{image{asset->{url}}},image { asset -> {url}}}`
   let res = await fetch(url + encodeURIComponent(query))
   const data = await res.json()
@@ -36,18 +35,6 @@ const Events = ({ data, techData }) => {
   // Link to the separate event pages: href={'/'+data[i].slug.current}
   return (
     <>
-      <Script
-        async
-        src='https://www.googletagmanager.com/gtag/js?id=G-9C3HWRW5DH'
-        strategy='afterInteractive'></Script>
-      <Script id='google-analytics' strategy='afterInteractive'>
-        {`window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-9C3HWRW5DH');`}
-      </Script>
-
       <SEO
         title='Events'
         description="Welcome to Rasam, the ultimate fest that promises non-stop enjoyment and fun! Explore the list of events that we have in store for you, ranging from cultural activities to sports tournaments and tech competitions. Join us for 3 days of entertainment and laughter, and create unforgettable memories with your friends. Don't miss out on the excitement and register for your favorite events now!"
