@@ -14,7 +14,7 @@ const Vip = () => {
     const data = await res.json()
     if (data.status == 'error') setResponseMessage(data.message)
     else if (data.status == 'success') {
-      setResponseMessage("You're ticket is reserved ")
+      setResponseMessage("Your ticket is reserved ")
       setCoupon('')
       setEmail('')
     }
