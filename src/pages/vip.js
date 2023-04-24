@@ -6,17 +6,22 @@ const Vip = () => {
   const [responseMessage, setResponseMessage] = useState('')
 
   const handleSubmit = async () => {
-    const res = await fetch('/api/getCoupon', {
-      method: 'POST',
-      body: JSON.stringify({ coupon, email }),
-    })
+    const regex = /^([a-zA-Z0-9._-]+)@([a-zA-Z0-9_-]+)\.([a-zA-Z]{2,6})$/
+    if (regex.test(email)) {
+      const res = await fetch('/api/getCoupon', {
+        method: 'POST',
+        body: JSON.stringify({ coupon, email }),
+      })
 
-    const data = await res.json()
-    if (data.status == 'error') setResponseMessage(data.message)
-    else if (data.status == 'success') {
-      setResponseMessage("Your ticket is reserved ")
-      setCoupon('')
-      setEmail('')
+      const data = await res.json()
+      if (data.status == 'error') setResponseMessage(data.message)
+      else if (data.status == 'success') {
+        setResponseMessage('Your ticket is reserved ')
+        setCoupon('')
+        setEmail('')
+      }
+    } else {
+      setResponseMessage('Invalid email')
     }
   }
 
