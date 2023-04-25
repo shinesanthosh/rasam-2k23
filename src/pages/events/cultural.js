@@ -33,8 +33,8 @@ const Events = ({ data }) => {
   return (
     <>
       <SEO
-        title='Events'
-        description="Welcome to Rasam, the ultimate fest that promises non-stop enjoyment and fun! Explore the list of events that we have in store for you, ranging from cultural activities to sports tournaments and tech competitions. Join us for 3 days of entertainment and laughter, and create unforgettable memories with your friends. Don't miss out on the excitement and register for your favorite events now!"
+        title='Cultural Events'
+        description="Get your groove on at Rasam's cultural events, where diversity, art, and music collide in a kaleidoscope of awesomeness. With a dazzling lineup of performances, exhibitions, and competitions showcasing the cultural traditions of our world, you're in for a treat. Whether you're a classical music buff, a Bollywood junkie, or a street art aficionado, you'll find plenty to get excited about. So come on down, dance like no one's watching, and soak up the vibes of cultural diversity. It's gonna be lit, so register now and get ready to party!"
       />
 
       <main className={styles.eventMain}>

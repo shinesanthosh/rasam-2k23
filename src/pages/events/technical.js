@@ -16,14 +16,12 @@ export const getStaticProps = async () => {
   let res = await fetch(url + encodeURIComponent(query))
   const data = await res.json()
 
-  
-
   return {
-    props: { data: data.result},
+    props: { data: data.result },
   }
 }
 
-const Events = ({ data,  }) => {
+const Events = ({ data }) => {
   //  The data prop holds the array of events to be displayed
   // Techdata holds technical events
   //  The array contains:
@@ -35,14 +33,13 @@ const Events = ({ data,  }) => {
   return (
     <>
       <SEO
-        title='Events'
-        description="Welcome to Rasam, the ultimate fest that promises non-stop enjoyment and fun! Explore the list of events that we have in store for you, ranging from cultural activities to sports tournaments and tech competitions. Join us for 3 days of entertainment and laughter, and create unforgettable memories with your friends. Don't miss out on the excitement and register for your favorite events now!"
+        title='Technical Events'
+        description="Get ready to geek out at Rasam's technical events, where the coolest tech and the hottest minds come together to explore the cutting-edge of innovation. With a crazy mix of competitions, workshops, and talks on everything from AI to cybersecurity, you're sure to find something that tickles your fancy. Whether you're a coding ninja or a robot wrangler, we've got you covered. So bring your A-game, show off your skills, and make some nerdy new friends. Don't miss out on the tech-tastic fun - register now and join the party!"
       />
 
       <main className={styles.eventMain}>
         <NavBar />
         <div className={styles.mainMask}>
-          
           <Container fluid className={styles.cardContainer}>
             <Row>
               <Col>
