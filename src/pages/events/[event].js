@@ -25,7 +25,7 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async ({ params }) => {
   const url = process.env.CMSURL;
-  const query = `*[_type == 'events' && slug.current == '${params.event}']{ name,date,details,short,url, cords[]{name, email, contact}, image{asset->{url}}, guidelines{asset->{url}},meta{title, desc, image{asset->{url}}, keywords} }`;
+  const query = `*[_type == 'events' && slug.current == '${params.event}']{ name,date,details,guidelinestxt,short,url, cords[]{name, email, contact}, image{asset->{url}}, guidelines{asset->{url}},meta{title, desc, image{asset->{url}}, keywords} }`;
   const res = await fetch(url + encodeURIComponent(query));
   const data = await res.json();
 
@@ -42,55 +42,44 @@ const Event = ({ data }) => {
   Example data:
   
   {
-  
-    cords: [
-      {
-        contact: '+9xxxxxxxxx4',
-        email: 'kevinxxxxxx@xxxxxxxx.in',
-        name: 'Kevin'
-      },
-
-      {
-        contact: '+91xxxxxxxxxxx9',
-        email: 'samsonxxxxxxxx@xxxxxxxxxx.in',
-        name: 'Samson'
-      }
-    ],
-
-    date: '2023-04-27',
-    
-    details: "Bluetern is not just a football tournament; it's an experience that will leave participants exhilarated and inspired. The game requires quick reflexes, strategic thinking, and teamwork, making it a perfect test of skill for football enthusiasts. The intense 10-minute games will have you on the edge of your seat, as each team tries to outmaneuver the other and score as many goals as possible.",
-    
-    guidelines: {
-      asset: {
-        url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-900x1600.jpg'
-      }
-    },
-
-    image: {
-      asset: {
-        url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-900x1600.jpg'
-      }
-    },
-
-    meta: {
-     
-      desc: "Bluetern is a 3x3 football tournament that promises an exciting and adrenaline-filled experience. Join us for a unique celebration of the ocean and sports, where quick reflexes, strategic thinking, and teamwork are put to the test. Don't miss out on this unmissable opportunity to be a part of the most thrilling event on the planet!",
-     
-      image: { 
-        asset: {
-          url: 'https://xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx-900x1600.jpg'
-        }
-      
-      },
-      keywords: 'football, rasam, festival',
-      
-      title: 'Bluetern 3*3 Football'
-    },
-    
-    name: 'BLUETERN 3*3 Football',
-    short: '3*3 Football',
-    url: 'https://google.com/'
+  {
+  details: 'Mad (Making a Difference) is a business design competition that challenges participants to create innovative solutions to real-world problems. Participants will be required to develop a new product or service that addresses a pressing societal issue and is financially viable. ',
+  guidelinestxt: [
+    '•\tEach team must comprise a minimum of 2 or a maximum of 3 members.',
+    '•\tThe topics for the competition will be given on the spot.',
+    '•\tTeams will be given materials that they can use to create something innovative.',
+    '•\tPosters can be made as a part of the advertisement.',
+    '•\tTeams would be required to formulate a catch line/tagline for the proposed product',
+    '•\tPresentation time limit of the advertisement is 5 minutes.',
+    '•\tThe decision of the Judges will be final and binding.'
+  ],
+  short: 'Business designing',
+  url: null,
+  image: {
+    asset: {
+      url: 'https://xxxxxx/720x1280.png'
+    }
+  },
+  guidelines: {
+    asset: {
+      url: 'https://xxxxxxx/-720x1280.png'
+    }
+  },
+  name: 'MAD',
+  date: null,
+  meta: {
+    title: 'MAD',
+    desc: 'Business designing',
+    image: { asset: [Object] },
+    keywords: null
+  },
+  cords: [
+    {
+      contact: 'xxxxx',
+      name: 'Stalan Varghese Mathew',
+      email: 'xxxxxx'
+    }
+  ]
 }
 
 
