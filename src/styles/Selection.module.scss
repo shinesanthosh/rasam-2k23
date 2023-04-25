@@ -1,0 +1,151 @@
+.selectionMain {
+  height: 100dvh;
+  width: 100dvw;
+
+  background-color: black;
+  background: url("/images/sel-bg.jpg");
+  background-size: cover;
+  //   background-position-x: -400px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.selectionMask {
+  height: 100dvh;
+  width: 100dvw;
+  background-color: #0000004e;
+  z-index: 1;
+
+  display: flex;
+  //   flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  .selectionLeft,
+  .selectionRight {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .selectionLeft {
+    height: 100%;
+    width: 50%;
+    // background-color: yellow;
+
+    .culturalDiv {
+      height: 70%;
+      width: 70%;
+      // background-color: blue;
+      // background: url("/images/cult-bg.jpg");
+      background-size: cover;
+    }
+  }
+
+  .selectionRight {
+    height: 100%;
+    width: 50%;
+    // background-color: red;
+    .technicalDiv {
+      height: 70%;
+      width: 70%;
+      //background-color: green;
+      // background: url("/images/tech-bg.jpg");
+      background-size: cover;
+      background-position-x: -300px;
+    }
+  }
+
+  .coverDiv {
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(0, 0, 0, 0.2);
+
+    transition: 0.2s ease-in-out;
+
+    h1 {
+      font-family: "ananda";
+      font-size: 80px;
+      color: #858585; //fallback solid color
+      @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+        color: transparent;
+        background-image: linear-gradient(
+            to right,
+            transparent 0%,
+            transparent 45%,
+            white 50%,
+            transparent 55%,
+            transparent 100%
+          ),
+          linear-gradient(
+            270deg,
+            #8c8c8c 1.3%,
+            #999 15%,
+            #868686 29.6%,
+            #828282 29.6%,
+            #7d7d7d 31.8%,
+            #797979 31.8%,
+            #6a6a6a 38.9%,
+            #d3d3d3
+          );
+        background-position: 110% 0%, 0 0;
+        background-size: 200% auto, auto;
+        -webkit-background-clip: text;
+        background-clip: text;
+        animation: shine 2s ease-in-out 2 alternate-reverse 2s;
+      }
+
+      &:before {
+        content: attr(data-silver);
+        color: #fff;
+        position: absolute;
+        z-index: -1;
+        top: -0.08vw;
+        left: 0px;
+        text-shadow: rgba(black, 1) 0px 0.08vw 12px;
+      }
+      @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+        &:after {
+          content: attr(data-silver);
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-image: linear-gradient(
+            to bottom,
+            transparent 0%,
+            transparent 48%,
+            rgba(#111, 0.5) 50%,
+            transparent 75%
+          );
+          -webkit-background-clip: text;
+          background-clip: text;
+        }
+      }
+
+      transition: 0.2s ease-in-out;
+    }
+  }
+
+  h1:hover {
+    color: white;
+  }
+}
+
+.coverDiv:hover {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(9, 121, 108, 0.5327380952380952) 0%,
+    rgba(0, 212, 255, 0) 39%
+  );
+}
