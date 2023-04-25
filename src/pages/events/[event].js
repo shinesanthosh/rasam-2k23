@@ -35,7 +35,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const Event = ({ data }) => {
-  console.log(data);
+  // console.log(data);
 
   /*
   
