@@ -3,7 +3,7 @@
   width: 100dvw;
 
   background-color: black;
-  background: url("/images/sel-bg.jpg");
+  background: url('/images/sel-bg.jpg');
   background-size: cover;
   //   background-position-x: -400px;
 
@@ -63,6 +63,7 @@
   .coverDiv {
     height: 100%;
     width: 100%;
+    cursor: pointer;
 
     display: flex;
     justify-content: center;
@@ -73,7 +74,7 @@
     transition: 0.2s ease-in-out;
 
     h1 {
-      font-family: "ananda";
+      font-family: 'ananda';
       font-size: 80px;
       color: #858585; //fallback solid color
       @supports ((background-clip: text) or (-webkit-background-clip: text)) {

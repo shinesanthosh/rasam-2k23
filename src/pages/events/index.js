@@ -1,5 +1,6 @@
-import React from "react";
-import styles from "../../styles/Selection.module.scss";
+import React from 'react'
+import styles from '../../styles/Selection.module.scss'
+import Router from 'next/router'
 
 const Selection = () => {
   return (
@@ -8,14 +9,18 @@ const Selection = () => {
         <div className={styles.selectionMask}>
           <div className={styles.selectionLeft}>
             <div className={styles.culturalDiv}>
-              <div className={styles.coverDiv}>
+              <div
+                className={styles.coverDiv}
+                onClick={() => Router.push('/events/cultural')}>
                 <h1>Cultural Events</h1>
               </div>
             </div>
           </div>
           <div className={styles.selectionRight}>
             <div className={styles.technicalDiv}>
-              <div className={styles.coverDiv}>
+              <div
+                className={styles.coverDiv}
+                onClick={() => Router.push('/events/technical')}>
                 <h1>Tech Events</h1>
               </div>
             </div>
@@ -23,7 +28,7 @@ const Selection = () => {
         </div>
       </main>
     </>
-  );
-};
+  )
+}
 
-export default Selection;
+export default Selection

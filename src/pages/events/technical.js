@@ -12,16 +12,18 @@ import { event } from 'jquery'
 
 export const getStaticProps = async () => {
   const url = process.env.CMSURL
-  let query = `*[_type == 'events' && type != 'tech']{name, short, date, slug{current},meta{image{asset->{url}}},image { asset -> {url}}}`
+  let query = `*[_type == 'events' && type == 'tech']{name, short, date, slug{current},meta{image{asset->{url}}},image { asset -> {url}}, type}`
   let res = await fetch(url + encodeURIComponent(query))
   const data = await res.json()
 
+  
+
   return {
-    props: { data: data.result },
+    props: { data: data.result},
   }
 }
 
-const Events = ({ data }) => {
+const Events = ({ data,  }) => {
   //  The data prop holds the array of events to be displayed
   // Techdata holds technical events
   //  The array contains:
@@ -40,10 +42,11 @@ const Events = ({ data }) => {
       <main className={styles.eventMain}>
         <NavBar />
         <div className={styles.mainMask}>
+          
           <Container fluid className={styles.cardContainer}>
             <Row>
               <Col>
-                <h1>Cultural Events</h1>
+                <h1>Technical Events</h1>
               </Col>
             </Row>
             <Row>
