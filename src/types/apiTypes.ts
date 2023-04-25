@@ -1,6 +1,7 @@
 export interface tokenQueryType {
-  email: String
-  coupon: String
+  email: string
+  coupon: string
+  name: string
 }
 
 export interface tokenResponseType {

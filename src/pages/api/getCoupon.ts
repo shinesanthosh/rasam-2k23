@@ -29,7 +29,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       const insertResponse = await insertReg(
         (token as getTokenType).coupon,
         (token as getTokenType).unique_id,
-        reqBody.email
+        reqBody.email,
+        reqBody.name
       )
       if (insertResponse.status == 'success')
         responseObject = { code: 200, message: 'Success', status: 'success' }

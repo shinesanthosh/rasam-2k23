@@ -7,24 +7,33 @@ import fetchGraphQL from './graphQL'
 const insertReg = async (
   coupon: string,
   unique_id: string,
-  email: string
+  email: string,
+  name: string
 ): Promise<tokenResponseType> => {
-  const operationsDoc = `mutation insertReg($coupon: String!, $email: String!, $unique_id: String!) {
-  insert_vip_registrations_one(object: {coupon: $coupon, email: $email, unique_id: $unique_id}) {
-    coupon
-    email
-    id
-    unique_id
-  }
-  update_coupons_by_pk(pk_columns: {unique_id: $unique_id}, _set: {used: true}) {
-    coupon
-    unique_id
-    used
-  }
-}
+  const operationsDoc = `mutation insertReg($coupon: String!, $email: String!, $unique_id: String!, $name: String!) {
+    insert_vip_registrations_one(object: {coupon: $coupon, email: $email, unique_id: $unique_id, name: $name}) {
+      coupon
+      email
+      id
+      unique_id
+      name
+    }
+    update_coupons_by_pk(pk_columns: {unique_id: $unique_id}, _set: {used: true}) {
+      coupon
+      unique_id
+      used
+    }
+  }  
 `
 
   try {
+    console.log('inserting: ', {
+      coupon,
+      unique_id,
+      email,
+      name,
+    })
+
     const res: vipRegistrationResponseType = await fetchGraphQL(
       operationsDoc,
       'insertReg',
@@ -32,10 +41,15 @@ const insertReg = async (
         coupon,
         unique_id,
         email,
+        name,
       }
     )
 
-    if (res.errors?.some((e) => e.message.includes('Uniqueness violation'))) {
+    if ('errors' in res) {
+      console.log('Some unknown error occured', res.errors)
+    }
+
+    if (res.errors?.some(e => e.message.includes('Uniqueness violation'))) {
       return {
         code: 400,
         status: 'error',
