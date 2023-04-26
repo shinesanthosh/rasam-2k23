@@ -87,8 +87,8 @@ const Home = () => {
           </video>
           <img src="/images/logo.png" alt="rasam logo" />
           <div className={styles.clockContainer}>
-            <Days />
-            <Clock />
+            {/* <Days /> */}
+            {/* <Clock /> */}
           </div>
         </div>
       </main>
