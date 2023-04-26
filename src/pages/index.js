@@ -60,11 +60,18 @@ const Home = () => {
         title="Home"
         description="Dive into the fourth season of RASAM, our highly anticipated college tech and cultural fest with an underwater twist. Immerse yourself in a spectacular blend of cutting-edge technology, artistic expression, and intellectual curiosity that will leave you spellbound. From electrifying performances by renowned artists to gripping competitions and workshops, RASAM Season 4 promises to offer an unparalleled opportunity for learning, exploration, and fun. Explore the depths of the unknown with us and discover a world of creativity, innovation, and diversity that will take your breath away. Come and experience the rush of adrenaline and the tranquility of the deep, all in one unforgettable event"
       />
+      <NavBar />
+
       <main className={styles.mainContainer}>
-        <NavBar />
-        <div className={styles.vipPass}>
-          <h1>VIP Pass</h1>
+        <div className={styles.vipContainer}>
+          <div className={styles.vipPass}>
+            <h1>VIP Pass</h1>
+          </div>
+          <div className={styles.proShow}>
+            <h1>PROSHOW Pass</h1>
+          </div>
         </div>
+
         <div className={styles.videoContainer}>
           <video autoPlay muted loop ref={videoRef}>
             <source
@@ -96,7 +103,7 @@ const Home = () => {
             >
               <i className="bi bi-facebook"></i>
             </a>
-            <a href="#">
+            <a href="https://wa.me/+919847651097">
               <i className="bi bi-whatsapp"></i>
             </a>
           </div>
