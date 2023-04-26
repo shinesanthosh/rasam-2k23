@@ -10,8 +10,11 @@ const Vip = () => {
   const [email, setEmail] = useState('')
   const [name, setName] = useState('')
   const [responseMessage, setResponseMessage] = useState('')
+  const [submitDisabled, setSubmitDisabled] = useState(false)
 
   const handleSubmit = async () => {
+    setResponseMessage('Please wait...')
+    setSubmitDisabled(true)
     const regex = /^([a-zA-Z0-9._-]+)@([a-zA-Z0-9_-]+)\.([a-zA-Z]{2,6})$/
     if (
       regex.test(email) &&
@@ -30,9 +33,11 @@ const Vip = () => {
         setCoupon('')
         setEmail('')
         setName('')
+        setSubmitDisabled(false)
       }
     } else {
       setResponseMessage('Invalid details')
+      setSubmitDisabled(false)
     }
   }
 
@@ -82,7 +87,8 @@ const Vip = () => {
             <Button
               variant='primary'
               className={styles.loginBtn}
-              onClick={() => handleSubmit()}>
+              onClick={() => handleSubmit()}
+              disabled={submitDisabled}>
               Book Ticket
             </Button>{' '}
             {/* <label>Coupon Code:</label>
