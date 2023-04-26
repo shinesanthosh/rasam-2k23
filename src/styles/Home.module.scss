@@ -10,29 +10,132 @@
   width: 100dvw;
   background-color: black;
 
-  .vipPass {
-    height: 80px;
-    width: 200px;
-    background-color: black;
+  .vipContainer {
+    // background-color: yellow;
     position: absolute;
     right: 5px;
     top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .vipPass {
+      height: 80px;
+      width: 200px;
+      background-color: black;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+
+      border-radius: 1rem;
+
+      box-shadow: inset 0px 10px 79px -70px #ffd700;
+
+      transition: 0.2s ease-in-out;
+
+      h1 {
+        font-family: "aquatico";
+        font-size: 20px;
+        color: #ac733c; //fallback solid color
+        @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+          color: transparent;
+          background-image: linear-gradient(
+              to right,
+              transparent 0%,
+              transparent 45%,
+              white 50%,
+              transparent 55%,
+              transparent 100%
+            ),
+            linear-gradient(
+              90deg,
+              #c78c48,
+              #cf9147 9.4%,
+              #cf9348 9.4%,
+              #b2763e 33.6%,
+              #ad743c 35.7%,
+              #ac723d 46.9%,
+              #b0773d 51.7%,
+              #b0793e 52.1%,
+              #c4914c 64.6%,
+              #c99750 68.5%,
+              #ce9e54 73.2%,
+              #f4d188
+            );
+          background-position: 110% 0%, 0 0;
+          background-size: 200% auto, auto;
+          -webkit-background-clip: text;
+          background-clip: text;
+          animation: shine 2s ease-in-out 2 alternate 2s;
+        }
+
+        &:before {
+          content: attr(data-gold);
+          color: #f0d8a9;
+          position: absolute;
+          z-index: -1;
+          top: -0.08vw;
+          left: 0px;
+          text-shadow: rgba(black, 1) 0px 0.08vw 12px;
+        }
+
+        @supports ((background-clip: text) or (-webkit-background-clip: text)) {
+          &:after {
+            content: attr(data-gold);
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: linear-gradient(
+              to bottom,
+              transparent 0%,
+              transparent 48%,
+              rgba(#621000, 0.5) 50%,
+              transparent 75%
+            );
+            -webkit-background-clip: text;
+            background-clip: text;
+          }
+        }
+
+        transition: 0.2s ease-in-out;
+      }
+    }
+
+    .vipPass:hover {
+      cursor: pointer;
+      box-shadow: inset 0px 10px 79px -50px #ffd700;
+      h1 {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .proShow {
+    height: 80px;
+    width: 200px;
+    background-color: #930a15;
 
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
+    margin-top: 10px;
 
     border-radius: 1rem;
 
-    box-shadow: inset 0px 10px 79px -70px #ffd700;
+    box-shadow: inset 0px 10px 79px -70px #808080;
 
     transition: 0.2s ease-in-out;
 
     h1 {
       font-family: "aquatico";
       font-size: 20px;
-      color: #ac733c; //fallback solid color
+      transition: 0.2s ease-in-out;
+
+      color: #858585; //fallback solid color
       @supports ((background-clip: text) or (-webkit-background-clip: text)) {
         color: transparent;
         background-image: linear-gradient(
@@ -44,40 +147,35 @@
             transparent 100%
           ),
           linear-gradient(
-            90deg,
-            #c78c48,
-            #cf9147 9.4%,
-            #cf9348 9.4%,
-            #b2763e 33.6%,
-            #ad743c 35.7%,
-            #ac723d 46.9%,
-            #b0773d 51.7%,
-            #b0793e 52.1%,
-            #c4914c 64.6%,
-            #c99750 68.5%,
-            #ce9e54 73.2%,
-            #f4d188
+            270deg,
+            #8c8c8c 1.3%,
+            #999 15%,
+            #868686 29.6%,
+            #828282 29.6%,
+            #7d7d7d 31.8%,
+            #797979 31.8%,
+            #6a6a6a 38.9%,
+            #d3d3d3
           );
         background-position: 110% 0%, 0 0;
         background-size: 200% auto, auto;
         -webkit-background-clip: text;
         background-clip: text;
-        animation: shine 2s ease-in-out 2 alternate 2s;
+        animation: shine 2s ease-in-out 2 alternate-reverse 2s;
       }
 
       &:before {
-        content: attr(data-gold);
-        color: #f0d8a9;
+        content: attr(data-silver);
+        color: #fff;
         position: absolute;
         z-index: -1;
         top: -0.08vw;
         left: 0px;
         text-shadow: rgba(black, 1) 0px 0.08vw 12px;
       }
-
       @supports ((background-clip: text) or (-webkit-background-clip: text)) {
         &:after {
-          content: attr(data-gold);
+          content: attr(data-silver);
           position: absolute;
           top: 0;
           left: 0;
@@ -85,21 +183,20 @@
             to bottom,
             transparent 0%,
             transparent 48%,
-            rgba(#621000, 0.5) 50%,
+            rgba(#111, 0.5) 50%,
             transparent 75%
           );
           -webkit-background-clip: text;
           background-clip: text;
         }
       }
-
-      transition: 0.2s ease-in-out;
     }
-  }
 
-  .vipPass:hover {
+    transition: 0.2s ease-in-out;
+  }
+  .proShow:hover {
     cursor: pointer;
-    box-shadow: inset 0px 10px 79px -50px #ffd700;
+    box-shadow: inset 0px 10px 79px -50px #c0c0c0;
     h1 {
       font-size: 22px;
     }
@@ -275,6 +372,16 @@
     height: 100dvh;
     width: 100dvw;
     overflow: hidden;
+
+    .vipContainer {
+      // background-color: yellow;
+      width: 100%;
+      height: fit-content;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      top: 730px;
+    }
   }
 
   .videoContainer {
@@ -293,15 +400,17 @@
     }
 
     img {
-      height: 150px;
-      width: 150px;
-      object-fit: contain;
-      opacity: 0.9;
-      filter: brightness(90%);
+      // height: 150px;
+      // width: 150px;
+      // object-fit: contain;
+      // opacity: 0.9;
+      // filter: brightness(90%);
       // filter: blur(1px);
-      position: absolute;
-      bottom: 0px;
-      margin-left: 30dvw;
+      // position: absolute;
+      // bottom: 0px;
+      // margin-left: 30dvw;
+
+      display: none;
     }
 
     .clockContainer {
