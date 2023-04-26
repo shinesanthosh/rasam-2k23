@@ -65,11 +65,15 @@ const Home = () => {
 
       <main className={styles.mainContainer}>
         <div className={styles.vipContainer}>
-          <div className={styles.vipPass} onClick={()=>Router.push('/vip')}>
-           
-            <h1 >VIP Pass</h1>
+          <div className={styles.vipPass} onClick={() => Router.push("/vip")}>
+            <h1>VIP Pass</h1>
           </div>
-          <div className={styles.proShow}>
+          <div
+            className={styles.proShow}
+            onClick={() => {
+              window.open("https://forms.gle/Fzs6QzUW2JXGvcxH6", "_blank");
+            }}
+          >
             <h1>PROSHOW Pass</h1>
           </div>
         </div>
