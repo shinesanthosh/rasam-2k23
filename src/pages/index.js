@@ -5,6 +5,7 @@ import NavBar from "../components/navbar";
 import Days from "../components/days";
 import Clock from "../components/countdown";
 import SEO from "@/components/SEO";
+import Router from "next/router";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -64,8 +65,9 @@ const Home = () => {
 
       <main className={styles.mainContainer}>
         <div className={styles.vipContainer}>
-          <div className={styles.vipPass}>
-            <h1>VIP Pass</h1>
+          <div className={styles.vipPass} onClick={()=>Router.push('/vip')}>
+           
+            <h1 >VIP Pass</h1>
           </div>
           <div className={styles.proShow}>
             <h1>PROSHOW Pass</h1>
