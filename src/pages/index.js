@@ -32,9 +32,11 @@ const Home = () => {
       const source = video.querySelector("source");
 
       if (isMobile) {
-        source.src = "https://res.cloudinary.com/ddb1tjuew/video/upload/v1681925404/mob_background_xa6nme.mp4";
+        source.src =
+          "https://res.cloudinary.com/ddb1tjuew/video/upload/v1681925404/mob_background_xa6nme.mp4";
       } else {
-        source.src = "https://res.cloudinary.com/ddb1tjuew/video/upload/v1681925124/raw_background_m3stgx.mp4";
+        source.src =
+          "https://res.cloudinary.com/ddb1tjuew/video/upload/v1681925124/raw_background_m3stgx.mp4";
       }
 
       video.load();
@@ -54,9 +56,15 @@ const Home = () => {
 
   return (
     <>
-      <SEO title="Home" description="Dive into the fourth season of RASAM, our highly anticipated college tech and cultural fest with an underwater twist. Immerse yourself in a spectacular blend of cutting-edge technology, artistic expression, and intellectual curiosity that will leave you spellbound. From electrifying performances by renowned artists to gripping competitions and workshops, RASAM Season 4 promises to offer an unparalleled opportunity for learning, exploration, and fun. Explore the depths of the unknown with us and discover a world of creativity, innovation, and diversity that will take your breath away. Come and experience the rush of adrenaline and the tranquility of the deep, all in one unforgettable event" />
+      <SEO
+        title="Home"
+        description="Dive into the fourth season of RASAM, our highly anticipated college tech and cultural fest with an underwater twist. Immerse yourself in a spectacular blend of cutting-edge technology, artistic expression, and intellectual curiosity that will leave you spellbound. From electrifying performances by renowned artists to gripping competitions and workshops, RASAM Season 4 promises to offer an unparalleled opportunity for learning, exploration, and fun. Explore the depths of the unknown with us and discover a world of creativity, innovation, and diversity that will take your breath away. Come and experience the rush of adrenaline and the tranquility of the deep, all in one unforgettable event"
+      />
       <main className={styles.mainContainer}>
         <NavBar />
+        <div className={styles.vipPass}>
+          <h1>VIP Pass</h1>
+        </div>
         <div className={styles.videoContainer}>
           <video autoPlay muted loop ref={videoRef}>
             <source
