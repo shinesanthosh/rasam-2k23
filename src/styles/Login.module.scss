@@ -37,6 +37,7 @@
     margin-bottom: 45px;
     font-family: "uk";
     font-size: 40px;
+    text-align: center;
 
     color: #ac733c; //fallback solid color
     @supports ((background-clip: text) or (-webkit-background-clip: text)) {
@@ -107,5 +108,11 @@
   .formInput {
     width: 70%;
     margin-bottom: 10px;
+  }
+}
+
+@media only screen  and (max-device-width: 767px)  {
+  .form{
+    width: 80%;
   }
 }
